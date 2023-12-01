@@ -1,0 +1,30 @@
+{
+  "name": "02-api-rest-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcosJBM/02-api-rest-nodejs.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "Marcos Botene",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarcosJBM/02-api-rest-nodejs/issues"
+  },
+  "homepage": "https://github.com/MarcosJBM/02-api-rest-nodejs#readme",
+  "dependencies": {
+    "fastify": "^4.24.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.1",
+    "tsx": "^4.6.1",
+    "typescript": "^5.3.2"
+  }
+}
