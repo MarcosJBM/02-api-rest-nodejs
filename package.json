@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/MarcosJBM/02-api-rest-nodejs#readme",
   "dependencies": {
-    "fastify": "^4.24.3"
+    "fastify": "^4.24.3",
+    "knex": "^3.0.1",
+    "sqlite3": "^5.1.6"
   },
   "devDependencies": {
     "@types/node": "^20.10.1",
