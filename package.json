@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/MarcosJBM/02-api-rest-nodejs#readme",
   "dependencies": {
+    "dotenv": "^16.3.1",
     "fastify": "^4.24.3",
     "knex": "^3.0.1",
     "sqlite3": "^5.1.6"
