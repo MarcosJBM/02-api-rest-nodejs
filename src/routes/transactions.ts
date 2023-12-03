@@ -4,6 +4,8 @@ import { z } from 'zod';
 
 import { knex } from '../database';
 
+const SEVEN_DAYS_IN_SECONDS = 60 * 60 * 24 * 7;
+
 export async function transactionsRoutes(app: FastifyInstance) {
   app.get('/', async () => {
     const transactions = await knex('transactions').select();
@@ -41,6 +43,17 @@ export async function transactionsRoutes(app: FastifyInstance) {
     const { amount, title, type } = createTransactionBodySchema.parse(
       request.body,
     );
+
+    let sessionId = request.cookies.sessionId;
+
+    if (!sessionId) {
+      sessionId = randomUUID();
+
+      reply.cookie('sessionId', sessionId, {
+        maxAge: SEVEN_DAYS_IN_SECONDS,
+        path: '/',
+      });
+    }
 
     await knex('transactions').insert({
       id: randomUUID(),
