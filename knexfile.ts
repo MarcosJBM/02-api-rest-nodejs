@@ -5,6 +5,8 @@ import { config as developmentConfig } from './src/database';
 const config: { [key: string]: Knex.Config } = {
   development: developmentConfig,
 
+  test: developmentConfig,
+
   staging: {
     client: 'postgresql',
     connection: {
