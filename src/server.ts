@@ -1,4 +1,6 @@
 import { app } from './app';
 import { env } from './env';
 
-app.listen({ port: env.PORT }).then(() => console.log('Server running'));
+const host = 'RENDER' in process.env ? '0.0.0.0' : 'localhost';
+
+app.listen({ host, port: env.PORT }).then(() => console.log('Server running'));
