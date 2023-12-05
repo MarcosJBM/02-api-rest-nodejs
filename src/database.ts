@@ -1,6 +1,6 @@
 import 'dotenv/config';
 
-import { Knex, knex as setupKnex } from 'knex';
+import { Knex, knex } from 'knex';
 
 import { env } from './env';
 
@@ -35,4 +35,4 @@ export const config: Config = {
   },
 };
 
-export const knex = setupKnex(config.test);
+export const knexInstance = knex(config.test);
