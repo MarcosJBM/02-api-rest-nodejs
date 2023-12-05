@@ -8,13 +8,33 @@ if (process.env.NODE_ENV === 'test')
 else config();
 
 const envSchema = z.object({
-  NODE_ENV: z.enum(['development', 'test', 'production']).default('production'),
-  DATABASE_CLIENT: z.enum(['sqlite3', 'pg']),
-  DATABASE_URL: z.string(),
+  NODE_ENV: z
+    .enum(['development', 'test', 'production'], {
+      errorMap: () => ({
+        message: 'NODE_ENV must be development, test or production',
+      }),
+    })
+    .default('production'),
+  DATABASE_CLIENT: z.enum(['sqlite3', 'pg'], {
+    errorMap: () => ({ message: 'DATABASE_CLIENT must be sqlite3 or pg' }),
+  }),
+  DATABASE_URL: z
+    .string({
+      invalid_type_error: 'DATABASE_URL has an invalid type',
+      required_error: 'DATABASE_URL is required',
+    })
+    .min(1, 'DATABASE_URL is required'),
   PORT: z
-    .string()
-    .default('3333')
-    .transform(port => Number(port)),
+    .number({
+      coerce: true,
+      invalid_type_error: 'PORT has an invalid type',
+      required_error: 'PORT is required',
+    })
+    .default(3333),
 });
 
-export const env = envSchema.parse(process.env);
+const result = envSchema.safeParse(process.env);
+
+if (!result.success) throw new Error(result.error.errors[0].message);
+
+export const env = result.data;
