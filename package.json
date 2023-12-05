@@ -7,16 +7,18 @@
     "dev": "tsx watch src/server.ts",
     "test": "vitest",
     "build": "tsup src",
+    "prettier": "prettier --write .",
+    "lint": "eslint --fix .",
     "knex": "node --loader tsx ./node_modules/.bin/knex"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MarcosJBM/02-api-rest-nodejs.git"
   },
-  "keywords": [
-    "nodejs"
-  ],
-  "author": "Marcos Botene",
+  "author": {
+    "email": "marcosjbotene@gmail.com",
+    "name": "Marcos Botene"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MarcosJBM/02-api-rest-nodejs/issues"
