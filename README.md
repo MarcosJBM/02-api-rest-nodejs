@@ -1,21 +1,9 @@
-## Knex Commands
+<div align="center">
+  <img src=".github/logo.svg" height="72"/>
+</div>
 
-### Create Migration
+## 📖 About
 
-```sh
-npm run knex -- migrate:make migration_name
-```
+Simple banking transaction API developed with [Fastify](https://fastify.dev/), [Knex.js](https://knexjs.org/), [Vitest](https://vitest.dev/) and other technologies.
 
-### Create Table
-
-After creating the migration, you can create a table
-
-```sh
-npm run knex -- migrate:latest
-```
-
-### Rollback Migration
-
-```sh
-npm run knex -- migrate:rollback
-```
+API developed with the aim of learning the technologies mentioned above.
