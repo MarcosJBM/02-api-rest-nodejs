@@ -2,7 +2,7 @@
   <img src=".github/logo.svg" height="72"/>
 </div>
 
-## 📖 About
+# 📖 About
 
 Simple banking transaction API developed with [Fastify](https://fastify.dev/), [Knex.js](https://knexjs.org/), [Vitest](https://vitest.dev/) and other technologies.
 
